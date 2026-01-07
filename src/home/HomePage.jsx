@@ -1,6 +1,7 @@
 import "../utils.css";
 import "./home.css";
 import Btn from "../btn/btn"
+import { Link } from "react-router-dom";
 export default function HomePage() {
   return (
     <>
@@ -39,7 +40,7 @@ export default function HomePage() {
 
           <hr className="about-line" />
             <span>
-            <a href="/contact" className="btn">Get in Touch</a>
+            <Link to="/contact" className="btn">Get in Touch</Link>
             </span>
 
         </div>

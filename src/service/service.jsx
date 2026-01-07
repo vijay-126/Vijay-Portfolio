@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./service.css";
+import {Link} from "react-router-dom";
 
 export default function HireMePage() {
   const containerRef = useRef(null);
@@ -96,7 +97,7 @@ export default function HireMePage() {
         </div>
 
         {/* ✉️ Hire Me Button */}
-        <a href="/contact" className="btnn bounce scroll-animate fade-up">Hire Me</a>
+        <Link to="/contact" className="btnn bounce scroll-animate fade-up">Hire Me</Link>
       </div>
     </section>
   );
