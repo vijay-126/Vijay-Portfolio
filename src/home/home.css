@@ -1,0 +1,266 @@
+:root {
+  --main-orange: #ff8f8f;
+  --main-yellow: #f5f5f0;
+  --main-blue: #c2e2fa;
+  --main-purple: #b7a3e3;
+}
+
+
+/* Floating Circles */
+.circles {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.circle {
+  position: absolute;
+  bottom: -10%;
+  opacity: 0.6;
+  border-radius: 50%;
+background-color: aliceblue;
+  animation: floatUp 12s linear infinite;
+
+
+}
+
+.circle:nth-child(1) {
+  left: 10%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+.circle:nth-child(2) {
+  left: 30%;
+  width: 120px;
+  height: 120px;
+  animation-delay: 2s;
+}
+
+.circle:nth-child(3) {
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 4s;
+}
+
+.circle:nth-child(4) {
+  left: 70%;
+  width: 100px;
+  height: 100px;
+  animation-delay: 1s;
+}
+
+.circle:nth-child(5) {
+  left: 85%;
+  width: 90px;
+  height: 90px;
+  animation-delay: 3s;
+}
+
+/* Keyframes */
+
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 0.8;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-120vh) scale(1.3) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+
+
+#home {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  padding: 2rem;
+}
+
+/* Layout */
+#home-page {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+/* Text section */
+.text-home {
+  flex: 1;
+  max-width: 600px;
+ background: radial-gradient(circle at top ,var(--main-blue),transparent 60%),
+ radial-gradient(circle at bottom ,var(--main-yellow),transparent 60%);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  
+overflow: hidden;
+
+}
+
+.text-home h3 {
+  font-size: 1.5rem;
+  color: var(--main-orange);
+}
+
+.text-home h1 {
+  font-size: 3rem;
+  margin: 0.5rem 0;
+  color: var(--main-dark-blue);
+}
+
+.text-home h2 {
+  font-size: 1.5rem;
+  color: var(--main-purple);
+  margin-bottom: 1rem;
+}
+
+.text-home p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* Button styling */
+
+.btn {
+  cursor: pointer;
+  border: none;
+  opacity: 1;
+  text-decoration: none;
+  background: linear-gradient(135deg,#c2e2fa,var(--main-purple));
+  padding: 0.8rem 2rem;
+  color:var(--main-orange);
+  border-radius: 50px;
+  transition: 0.3s ease;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  position: relative;
+float: right;
+  z-index: 2;
+  margin: auto;
+}
+.btn:hover {
+  transform: scale(1.05),translateY(-3px);
+  color: #000000c7;
+}
+
+
+
+/* Image styling */
+.img-home {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.my-image {
+  width: 25rem;
+  height: 25rem;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 0;
+  border: 2px solid var(--main-purple);
+  animation: float 4s ease-in-out infinite;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translatey(0);
+  }
+
+  50% {
+    transform: translatey(10px);
+  }
+}
+
+
+
+.my-image:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+}
+
+.text-home:hover{
+box-shadow: 0 10px 1rem var(--main-purple);
+}
+.btn-container{
+  position: relative;
+  top: 2rem;
+  z-index: 2;
+}
+
+/* responsive */
+
+@media screen and (max-width:780px)  {
+
+  #home{
+        width: 85%;
+        padding: 3.5rem;
+        position: relative;
+        right: 1.6rem;
+
+  }
+  #home-page{
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  .text-home{
+    align-items: center;
+    padding: 0 .5rem;
+    max-width: 350px;
+    
+  }
+  .text-home h1{
+    font-size: 2.2rem ;
+  }
+  .text-home h2{
+    font-size: 1.2rem;
+  }
+.text-home p{
+    text-align: left;
+
+}
+.circles{
+  display: none;
+}
+
+  
+  .img-home{
+   order: -1;
+  }
+  .my-image{
+    width: 20rem;
+    height: 20rem;
+    border-radius: 25%;
+    animation: none;
+    
+  }
+
+}

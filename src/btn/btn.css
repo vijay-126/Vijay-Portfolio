@@ -1,0 +1,75 @@
+
+.Skill-link{
+  display: flex;
+  color:#374bd1;
+  align-items: center;
+  margin-left: auto; 
+  text-decoration: none;
+  gap: 10px;
+  font-size: 1.2rem;
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+ background: linear-gradient(135deg, #b7a3e3, #c2e2fa);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border: 0.1px solid var(--main-blue) ;
+}
+
+.Skill-link:hover {
+  transform: scale(1.05);
+  color: rgba(0, 0, 0, 0.801);
+  box-shadow: 0 6px 10px var(--main-purple);
+
+}
+
+/* Man + Rope Animation */
+.man-container {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  opacity: 1;
+  z-index: 1000;
+}
+
+.man {
+  width: 30px;
+  height: 50px;
+  background: #333;
+  border-radius: 5px;
+  position: relative;
+  z-index: 4;
+}
+
+.rope {
+  width: 5px;
+  height: 50px;
+  background: #000;
+  transform-origin: top;
+}
+
+.man-animate {
+  animation: moveUp 2s forwards;
+}
+
+@keyframes moveUp {
+  0% { bottom: -100px; transform: translateX(-50%) rotate(0deg); }
+  50% { bottom: 50px; transform: translateX(-50%) rotate(0deg); }
+  100% { bottom: 50px; transform: translateX(-50%) rotate(720deg); }
+}
+
+.rope-animate {
+  animation: rollRope 2s forwards;
+}
+
+@keyframes rollRope {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(720deg); }
+}
+
+

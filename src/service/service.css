@@ -1,0 +1,261 @@
+
+
+/* container */
+#services {
+  position: relative;
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--main-yellow), var(--main-blue));
+  overflow-x: hidden;
+  overflow-y: visible;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+}
+
+/* animated bg behind content */
+#services .animated-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at 30% 20%,
+      var(--main-purple) 0%,
+      transparent 60%
+    ),
+    radial-gradient(circle at 80% 70%, var(--main-orange) 0%, transparent 60%);
+  animation: moveGradient 10s infinite alternate ease-in-out;
+  opacity: 0.18;
+  z-index: -1; /* crucial: keep behind content */
+}
+@keyframes moveGradient {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, -50px);
+  }
+}
+
+#services .services-container {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+/* headings */
+#services h1 {
+  font-size: 2.4rem;
+  color: var(--main-purple);
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+#services p {
+  color: #333;
+  line-height: 1.6;
+  max-width: 850px;
+  margin: 0 auto 18px auto;
+}
+
+/* service cards */
+#services .service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  margin: 40px 0;
+}
+#services .service-card {
+  background: var(--main-blue);
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+  cursor: pointer;
+}
+#services .service-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  background: var(--main-orange);
+  color: #fff;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* skills */
+#services .skills-section {
+  margin-top: 60px;
+}
+#services .skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin: 28px 0 10px;
+}
+#services .skill-card {
+  background: var(--main-purple);
+  color: #fff;
+  border-radius: 10px;
+  padding: 12px 10px;
+  font-weight: 600;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+#services .skill-card:hover {
+  transform: scale(1.06);
+  background: var(--main-blue);
+  color: #000;
+}
+
+/* projects */
+#services .projects-section {
+  margin-top: 70px;
+}
+#services .project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+#services .project-card {
+  background: var(--main-yellow);
+  border: 2px solid var(--main-purple);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+}
+#services .project-card:hover {
+  transform: translateY(-10px);
+  background: var(--main-orange);
+  color: #fff;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
+}
+
+/* button */
+#services .btnn {
+background: radial-gradient(circle at center , var(--main-yellow), transparent 60%);
+  color: var(--main-purple);
+  padding: 12px 28px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: transform 1s ease-in-out, box-shadow 0.5s ease-in-out;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.52);
+  transform: scale(1);
+  z-index: 2;
+}
+#services .btnn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 9px 18px rgba(0, 0, 0, 0.52);
+
+
+}
+
+/* base scroll animation (elements start hidden) */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+
+/* once observed, become visible and keep final state */
+.scroll-animate.animate {
+  opacity: 1;
+  transform: translateY(0);
+  animation-fill-mode: forwards;
+}
+
+/* specific animated keyframes (optional extras) */
+.slide-down.animate {
+  animation: slideDown 0.6s ease forwards;
+}
+.fade-up.animate {
+  animation: fadeInUp 0.7s ease forwards;
+}
+.bounce {
+  animation: bounce 2s infinite ease-in-out;
+}
+
+/* keyframes */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* responsive tweaks */
+@media (max-width: 780px) {
+  #services h1 {
+    font-size: 1.8rem;
+  }
+  #services .service-cards,
+  #services .project-grid {
+    gap: 16px;
+  }
+  #services .services-container {
+    width: 95%;
+  }
+}
+/* reverse (scroll-up fade-out) animation */
+.scroll-animate.reverse {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* optional smoother fade-out effect */
+.scroll-animate.reverse.slide-down {
+  animation: scrollOutDown 0.6s ease forwards;
+}
+.scroll-animate.reverse.fade-up {
+  animation: scrollOutUp 0.6s ease forwards;
+}
+
+@keyframes scrollOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+}
+
+@keyframes scrollOutUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
