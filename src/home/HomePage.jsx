@@ -29,7 +29,7 @@ export default function HomePage() {
             </div>
 
             <div className="img-home">
-              <img className="my-image" src="/src/assets/my.jpg" alt="Vijay Kaushik" />
+              <img className="my-image" src="/../public/assets/my.jpg" alt="Vijay Kaushik" />
             </div>
 
           </div>

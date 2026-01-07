@@ -11,28 +11,7 @@
   color: #222;
 }
 
-/* animated bg behind content */
-#services .animated-bg {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-      circle at 30% 20%,
-      var(--main-purple) 0%,
-      transparent 60%
-    ),
-    radial-gradient(circle at 80% 70%, var(--main-orange) 0%, transparent 60%);
-  animation: moveGradient 10s infinite alternate ease-in-out;
-  opacity: 0.18;
-  z-index: -1; /* crucial: keep behind content */
-}
-@keyframes moveGradient {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(50px, -50px);
-  }
-}
+
 
 #services .services-container {
   position: relative;
