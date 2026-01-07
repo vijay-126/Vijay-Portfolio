@@ -9,7 +9,7 @@ export default function About() {
       <div className="about-container">
         <div className="about-image">
           <img
-            src="/../public/assets/about.png"
+            src="/assets/about.png"
             alt="Vijay Kaushik"
             className="about-pic"
           />

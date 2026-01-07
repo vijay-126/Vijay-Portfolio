@@ -23,7 +23,7 @@ export default function Navbar() {
       <section id="nav-bar">
         <nav>
           <div className="nav-logo">
-            <img id="logo-img" src="/../public/assets/logo.png" alt="img" />
+            <img id="logo-img" src="/assets/logo.png" alt="img" />
 
             <h2 onMouseEnter={chngeText} onMouseLeave={resetText}>
               {Text}
